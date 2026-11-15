@@ -21,13 +21,7 @@
 </p>
 
 ---
-
-## Live preview
-
-**See the project without installing anything:** an interactive page that **runs both programs in the browser** (type your own answers or press Auto-play) beside **animated flowcharts** that light up the path being executed, plus the recorded sessions, every chart and small live calculators.
-
-- **Hosted page:** `https://<your-username>.github.io/python-conditions-loops-assessment/` (turn on GitHub Pages first; see [Publish the preview](#publish-the-preview))
-- **Local file:** open [`index.html`](index.html) in any browser. It is fully self-contained (all images are embedded), so it needs no server, no internet connection and no other files.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Open%20Preview-16a34a?style=for-the-badge&logo=githubpages&logoColor=white)](https://laiba-shehbaz.github.io/python-conditions-loops-assessment/preview.html)
 
 ---
 
@@ -627,16 +621,7 @@ git push -u origin main
 Then in the repository go to **Settings → Pages**, choose **Deploy from a branch**, select **main** and **/ (root)**, and save. After a minute the preview is live at `https://<your-username>.github.io/python-conditions-loops-assessment/`. Replace `<your-username>` with your GitHub username in this README's [Live preview](#live-preview) section.
 
 ---
-
-## References
-
-1. Python Software Foundation. *The Python Tutorial, 4. More Control Flow Tools* (`if`, `for`, `range()`). <https://docs.python.org/3/tutorial/controlflow.html>
-2. Python Software Foundation. *The Python Language Reference, Compound statements*. <https://docs.python.org/3/reference/compound_stmts.html>
-3. Python Software Foundation. *Built-in functions: `input()`, `float()`, `int()`*. <https://docs.python.org/3/library/functions.html>
-4. Python Software Foundation. *`math.isfinite`*. <https://docs.python.org/3/library/math.html#math.isfinite>
-5. Python Software Foundation. *Format Specification Mini-Language*. <https://docs.python.org/3/library/string.html#format-specification-mini-language>
-6. Python Software Foundation. *Errors and Exceptions* (`try` / `except`). <https://docs.python.org/3/tutorial/errors.html>
-7. Python Software Foundation. *`unittest`: Unit testing framework* and *`unittest.mock`*. <https://docs.python.org/3/library/unittest.html>
-8. van Rossum, G., Warsaw, B. and Coghlan, A. *PEP 8: Style Guide for Python Code*. <https://peps.python.org/pep-0008/>
-9. Goodger, D. and van Rossum, G. *PEP 257: Docstring Conventions*. <https://peps.python.org/pep-0257/>
-10. Hunter, J. D. *Matplotlib: A 2D graphics environment.* Computing in Science & Engineering, 9(3), 90-95 (2007). Used only to draw the figures. <https://matplotlib.org/>
+<p align="center">
+  <b>Author:</b> Laiba Shehbaz &nbsp;·&nbsp; <b>Assessment:</b> Python Conditions &amp; Loops (Task 1: Scholarship Eligibility, Task 2: Pharmacy Inventory)<br>
+  <sub>Built with Python 3 · standard library only</sub>
+</p>

@@ -11,7 +11,7 @@
   <img alt="Topics: conditionals, loops" src="https://img.shields.io/badge/topics-conditionals%20%7C%20loops-E8A317">
 </p>
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Open%20Preview-16a34a?style=for-the-badge&logo=githubpages&logoColor=white)](https://laiba-shehbaz.github.io/python-conditions-loops-assessment/preview.html)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Open%20Preview-16a34a?style=for-the-badge&logo=githubpages&logoColor=white)](https://laiba-shehbaz.github.io/python-conditions-loops-assessment/index.html)
 
 ---
 

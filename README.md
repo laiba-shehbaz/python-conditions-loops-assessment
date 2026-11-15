@@ -11,16 +11,6 @@
   <img alt="Topics: conditionals, loops" src="https://img.shields.io/badge/topics-conditionals%20%7C%20loops-E8A317">
 </p>
 
-<p align="center">
-  <b>Two console applications that decide with <code>if / elif / else</code> and repeat with <code>for</code> loops.</b><br>
-  <a href="#live-preview">Live preview</a> ·
-  <a href="#requirements-and-how-each-is-met">Requirements</a> ·
-  <a href="#testing-and-verification">Testing</a> ·
-  <a href="#how-to-run">How to run</a> ·
-  <a href="#references">References</a>
-</p>
-
----
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Open%20Preview-16a34a?style=for-the-badge&logo=githubpages&logoColor=white)](https://laiba-shehbaz.github.io/python-conditions-loops-assessment/preview.html)
 
 ---

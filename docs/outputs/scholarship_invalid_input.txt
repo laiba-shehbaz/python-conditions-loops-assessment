@@ -1,0 +1,31 @@
+=== Student Scholarship Eligibility System ===
+
+Enter student name: ali123
+  Invalid name. Use letters, spaces, hyphens or apostrophes only.
+Enter student name: ali khan
+Enter academic marks (%): abc
+  Invalid input. Please enter a number.
+Enter academic marks (%): 150
+  Value must be between 0 and 100.
+Enter academic marks (%): nan
+  Invalid input. Please enter a real number.
+Enter academic marks (%): 95
+Enter attendance percentage (%): 90
+Enter monthly family income (Rs.): -5
+  Value must be at least 0.
+Enter monthly family income (Rs.): 40000
+
+====================================================
+        SCHOLARSHIP EVALUATION REPORT
+====================================================
+Student Name          : Ali Khan
+Academic Marks        : 95.0%   (min 80%)
+Attendance            : 90.0%   (min 85%)
+Monthly Family Income : Rs. 40,000   (max Rs. 50,000)
+----------------------------------------------------
+Status                : ELIGIBLE
+Scholarship Awarded   : Full Scholarship
+====================================================
+
+Evaluate another student? (y/n): n
+Goodbye!

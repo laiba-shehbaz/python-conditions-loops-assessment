@@ -1,0 +1,3 @@
+# The two programs use ONLY the Python standard library.
+# matplotlib is needed solely to regenerate the images in assets/.
+matplotlib>=3.7

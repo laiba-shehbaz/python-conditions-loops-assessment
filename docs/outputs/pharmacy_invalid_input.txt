@@ -1,0 +1,39 @@
+=== Smart Pharmacy Inventory & Sales Management System ===
+
+How many different medicines to process? x
+  Invalid input. Please enter a whole number.
+How many different medicines to process? -1
+  Value must be at least 1.
+How many different medicines to process? 1
+
+--- Medicine 1 of 1 ---
+Medicine name: 
+  Name cannot be empty.
+Medicine name:   
+  Name cannot be empty.
+Medicine name: dispirin
+Available stock (units): abc
+  Invalid input. Please enter a whole number.
+Available stock (units): 50
+Price per unit (Rs.): 0
+  Price must be greater than 0.
+Price per unit (Rs.): nan
+  Invalid input. Please enter a real number.
+Price per unit (Rs.): -3
+  Price must be greater than 0.
+Price per unit (Rs.): 2.5
+Quantity sold: 1.5
+  Invalid input. Please enter a whole number.
+Quantity sold: 4
+  Sale amount     : Rs. 10.00
+  Remaining stock : 46 unit(s)
+
+==================================================
+        DAILY PHARMACY REPORT
+==================================================
+Total medicines processed    : 1
+Successful sales             : 1
+Rejected sales (low stock)   : 0
+Total revenue                : Rs. 10.00
+Medicines requiring restock  : 0
+==================================================

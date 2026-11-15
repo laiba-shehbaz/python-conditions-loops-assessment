@@ -1,0 +1,41 @@
+=== Smart Pharmacy Inventory & Sales Management System ===
+
+How many different medicines to process? 0
+  Value must be at least 1.
+How many different medicines to process? 3
+
+--- Medicine 1 of 3 ---
+Medicine name: panadol
+Available stock (units): 100
+Price per unit (Rs.): 5
+Quantity sold: 20
+  Sale amount     : Rs. 100.00
+  Remaining stock : 80 unit(s)
+
+--- Medicine 2 of 3 ---
+Medicine name: amoxil
+Available stock (units): 15
+Price per unit (Rs.): 50
+Quantity sold: 10
+  Sale amount     : Rs. 500.00
+  Remaining stock : 5 unit(s)
+  [WARNING] Low stock for Amoxil! Only 5 left.
+
+--- Medicine 3 of 3 ---
+Medicine name: brufen
+Available stock (units): 8
+Price per unit (Rs.): 12
+Quantity sold: 9
+  [!] Sale rejected: only 8 unit(s) of Brufen in stock.
+  [WARNING] Low stock for Brufen! Only 8 left.
+
+==================================================
+        DAILY PHARMACY REPORT
+==================================================
+Total medicines processed    : 3
+Successful sales             : 2
+Rejected sales (low stock)   : 1
+Total revenue                : Rs. 600.00
+Medicines requiring restock  : 2
+Restock list                 : Amoxil, Brufen
+==================================================

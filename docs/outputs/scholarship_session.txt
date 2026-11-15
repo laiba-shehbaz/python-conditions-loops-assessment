@@ -1,0 +1,62 @@
+=== Student Scholarship Eligibility System ===
+
+Enter student name: ali khan
+Enter academic marks (%): 95
+Enter attendance percentage (%): 90
+Enter monthly family income (Rs.): 40000
+
+====================================================
+        SCHOLARSHIP EVALUATION REPORT
+====================================================
+Student Name          : Ali Khan
+Academic Marks        : 95.0%   (min 80%)
+Attendance            : 90.0%   (min 85%)
+Monthly Family Income : Rs. 40,000   (max Rs. 50,000)
+----------------------------------------------------
+Status                : ELIGIBLE
+Scholarship Awarded   : Full Scholarship
+====================================================
+
+Evaluate another student? (y/n): y
+
+Enter student name: bilal
+Enter academic marks (%): 70
+Enter attendance percentage (%): 80
+Enter monthly family income (Rs.): 60000
+
+====================================================
+        SCHOLARSHIP EVALUATION REPORT
+====================================================
+Student Name          : Bilal
+Academic Marks        : 70.0%   (min 80%)
+Attendance            : 80.0%   (min 85%)
+Monthly Family Income : Rs. 60,000   (max Rs. 50,000)
+----------------------------------------------------
+Status                : NOT ELIGIBLE
+Reason(s):
+  - Marks (70.0%) are below the required 80%.
+  - Attendance (80.0%) is below the required 85%.
+  - Monthly family income (Rs. 60,000) exceeds Rs. 50,000.
+====================================================
+
+Evaluate another student? (y/n): y
+
+Enter student name: sara noor
+Enter academic marks (%): 85
+Enter attendance percentage (%): 88
+Enter monthly family income (Rs.): 50000
+
+====================================================
+        SCHOLARSHIP EVALUATION REPORT
+====================================================
+Student Name          : Sara Noor
+Academic Marks        : 85.0%   (min 80%)
+Attendance            : 88.0%   (min 85%)
+Monthly Family Income : Rs. 50,000   (max Rs. 50,000)
+----------------------------------------------------
+Status                : ELIGIBLE
+Scholarship Awarded   : Partial Scholarship
+====================================================
+
+Evaluate another student? (y/n): n
+Goodbye!

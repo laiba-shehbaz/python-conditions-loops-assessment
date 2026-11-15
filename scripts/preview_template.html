@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%90%8D%3C/text%3E%3C/svg%3E">
+<title>Python Conditions &amp; Loops: project preview</title>
+<style>
+:root{--ink:#10223A;--mut:#5B6B7F;--paper:#F4F7FA;--card:#fff;--line:#D5DEE8;--sap:#2F5FD0;--jade:#0E9F7E;--bad:#C93A3A;--warn:#9A6A00;--okbg:#DDF3EA;--badbg:#FBE3E3;--wbg:#FFF1CC}
+*{box-sizing:border-box}
+html{scroll-padding-top:1rem}
+:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--sap)}
+:focus-visible{outline:3px solid #F2B84B;outline-offset:2px}
+.hero{background:#10223A}
+.hero img{width:100%;max-width:1400px;margin:0 auto}
+main{max-width:1000px;margin:0 auto;padding:2rem 1.25rem 3rem}
+h2{font-size:1.5rem;line-height:1.25;margin:3rem 0 .4rem}
+h3{font-size:1.05rem;margin:0 0 .6rem}
+.lead{font-size:1.1rem;max-width:68ch;margin:0 0 1rem}
+.sub{color:var(--mut);margin:0 0 1.2rem;max-width:68ch}
+.links a{display:inline-block;margin:0 .5rem .5rem 0;padding:.5rem .9rem;border-radius:8px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600}
+.links a.alt{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem;margin:1.5rem 0 0}
+.facts div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.8rem 1rem}
+.facts b{display:block;font-size:1.5rem;line-height:1.2}
+.facts span{color:var(--mut);font-size:.92rem}
+.demos{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.2rem}
+.card.s{border-top:5px solid var(--sap)}.card.p{border-top:5px solid var(--jade)}
+label{display:block;font-size:.92rem;font-weight:600;margin:.6rem 0 .2rem}
+input{width:100%;padding:.55rem .65rem;border:1.5px solid #9FB0C3;border-radius:8px;font:inherit;color:var(--ink);background:var(--card)}
+.out{margin-top:1rem;padding:.8rem 1rem;border-radius:8px;min-height:4.2rem;font-size:.95rem}
+.out strong{display:block;font-size:1.1rem}
+.out ul{margin:.3rem 0 0;padding-left:1.2rem}
+.ok{background:var(--okbg)}.no{background:var(--badbg)}.wa{background:var(--wbg)}.idle{background:#EEF2F6;color:var(--mut)}
+.note{font-size:.85rem;color:var(--mut);margin:.7rem 0 0}
+[role=tablist]{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.6rem}
+[role=tab]{font:inherit;font-weight:600;padding:.45rem .85rem;border-radius:8px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+[role=tab][aria-selected=true]{background:var(--ink);color:var(--paper)}
+pre{margin:0;background:#0C1A2C;color:#DCE6F2;border-radius:10px;padding:1rem 1.1rem;overflow-x:auto;font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;max-height:34rem}
+pre[hidden]{display:none}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:1rem;align-items:start}
+figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.6rem}
+figcaption{font-size:.9rem;color:var(--mut);padding:.5rem .4rem .2rem}
+.wide{grid-column:1/-1}
+footer{color:var(--mut);font-size:.9rem;margin-top:3rem;border-top:1px solid var(--line);padding-top:1rem}
+code{font:.92em ui-monospace,Menlo,Consolas,monospace;background:var(--line);padding:.1em .35em;border-radius:4px}
+
+@media (prefers-color-scheme:dark){:root{--ink:#E6EEF8;--mut:#9FB0C3;--paper:#0B1624;--card:#13243A;--line:#2A3E57;--okbg:#14382D;--badbg:#3E1B1B;--wbg:#3D3210;--sap:#7FA2F5}.out{color:#E6EEF8}.idle{background:#1B2D45}}
+.run{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem;align-items:start;margin-bottom:1.5rem}
+@media (max-width:820px){.run{grid-template-columns:minmax(0,1fr)}}
+.tm{background:#0C1A2C;border-radius:12px;color:#DCE6F2;overflow:hidden;border:1px solid var(--line)}
+.tm h3{margin:0;padding:.6rem 1rem;font-size:.95rem;background:#16304F;color:#fff}
+.tm pre{border-radius:0;height:21rem;max-height:none;overflow:auto;white-space:pre-wrap;word-break:break-word}
+.tr{display:flex;gap:.5rem;align-items:center;padding:.5rem 1rem;border-top:1px solid #234062;font:13.5px ui-monospace,Menlo,Consolas,monospace}
+.tr span{color:#F2B84B;white-space:pre-wrap;flex:0 1 55%}
+.tr input{flex:1;min-width:0;background:#0C1A2C;color:#fff;border:1px solid #3B557A;font:inherit;padding:.4rem .5rem}
+.tb{display:flex;gap:.5rem;flex-wrap:wrap;padding:.6rem 1rem;background:#10223A}
+.tb button{font:600 .9rem Inter,system-ui,sans-serif;padding:.45rem .8rem;border-radius:8px;border:1.5px solid #8FB0DA;background:transparent;color:#fff;cursor:pointer}
+.tb button.go{background:#F2B84B;border-color:#F2B84B;color:#10223A}
+.fl{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.5rem}
+.fl svg{width:100%;height:auto;display:block;color:var(--mut)}
+.edge{fill:none;stroke:var(--mut);stroke-width:1.6;stroke-dasharray:5 4;animation:flow .9s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-9}}
+.elab{font:600 10px Inter,system-ui,sans-serif;fill:var(--mut)}
+.nd rect,.nd polygon{fill:var(--card);stroke:var(--ink);stroke-width:1.5;transition:fill .3s,stroke .3s}
+.nd text{font:11px Inter,system-ui,sans-serif;fill:var(--ink);text-anchor:middle}
+.nd.t rect{fill:var(--ink)}.nd.t text{fill:var(--paper);font-weight:700}
+.nd.d polygon{stroke:#E8A317}
+.nd.t.seen rect,.nd.t.on rect{fill:var(--ink)}
+.nd.seen rect,.nd.seen polygon{fill:var(--okbg)}
+.nd.on rect,.nd.on polygon{fill:var(--wbg);stroke:#F2B84B;stroke-width:3.5;animation:pulse .9s ease-in-out infinite}
+@keyframes pulse{50%{stroke-width:1.5}}
+.loop{fill:none;stroke:var(--jade);stroke-width:1.6;stroke-dasharray:6 4}
+.ll{font:700 10px ui-monospace,Menlo,monospace;fill:var(--jade)}
+@media (prefers-reduced-motion:reduce){.edge,.nd.on rect,.nd.on polygon{animation:none}}
+</style>
+</head>
+<body>
+<header class="hero"><img src="assets/banner.png" alt="Python Conditions and Loops: Scholarship Eligibility and Pharmacy Inventory console applications" width="2080" height="546"></header>
+<main>
+<p class="lead">Two Python console programs: one decides a student’s scholarship with <code>if / elif / else</code>, the other processes pharmacy sales with a <code>for</code> loop, counters and an accumulator. This page shows them without installing anything.</p>
+<p class="links"><a href="README.md">Read the full README</a><a class="alt" href="student_scholarship_system.py">Scholarship code</a><a class="alt" href="pharmacy_inventory_system.py">Pharmacy code</a></p>
+<div class="facts">
+<div><b>2</b><span>programs, standard library only</span></div>
+<div><b>{{TESTS_PASSED}} / {{TESTS_TOTAL}}</b><span>automated tests passing</span></div>
+<div><b>8</b><span>scholarship scenarios checked</span></div>
+<div><b>Rs. {{REVENUE}}</b><span>revenue in the recorded pharmacy run</span></div>
+</div>
+
+<h2 id="run">Run the programs</h2>
+<p class="sub">These are live. Type answers as in a real terminal (Enter to submit), or press Auto-play. The flowchart beside each terminal lights up the path your answers take: amber is the current step, green is already visited. Bad input is re-prompted exactly like the Python programs.</p>
+<div class="run" id="rs">
+<div class="tm"><h3>Task 1: Scholarship Eligibility</h3><pre role="log" aria-live="polite" tabindex="0"></pre>
+<div class="tr"><span></span><input type="text" aria-label="Your answer" autocomplete="off" disabled></div>
+<div class="tb"><button class="go" data-a="auto">Auto-play example</button><button data-a="re">Restart</button></div></div>
+<div class="fl" aria-label="Animated flowchart of the scholarship program"></div></div>
+<div class="run" id="rp">
+<div class="tm"><h3>Task 2: Pharmacy Inventory</h3><pre role="log" aria-live="polite" tabindex="0"></pre>
+<div class="tr"><span></span><input type="text" aria-label="Your answer" autocomplete="off" disabled></div>
+<div class="tb"><button class="go" data-a="auto">Auto-play example</button><button data-a="re">Restart</button></div></div>
+<div class="fl" aria-label="Animated flowchart of the pharmacy program"></div></div>
+<h2 id="try">Try the rules</h2>
+<p class="sub">Quick calculators. These two cards re-implement each program’s decision rule in JavaScript so you can test inputs in the browser. The Python programs themselves are the source of truth.</p>
+<div class="demos">
+<section class="card s" aria-labelledby="ds"><h3 id="ds">Scholarship eligibility</h3>
+<label for="m">Marks (%)</label><input id="m" type="number" inputmode="decimal" value="85" min="0" max="100">
+<label for="a">Attendance (%)</label><input id="a" type="number" inputmode="decimal" value="88" min="0" max="100">
+<label for="i">Monthly family income (Rs.)</label><input id="i" type="number" inputmode="decimal" value="50000" min="0">
+<div id="so" class="out idle" aria-live="polite"></div>
+<p class="note">Needs marks ≥ 80, attendance ≥ 85, income ≤ 50,000. Marks ≥ 90 earns the full scholarship.</p></section>
+<section class="card p" aria-labelledby="dp"><h3 id="dp">Pharmacy sale check</h3>
+<label for="st">Available stock (units)</label><input id="st" type="number" inputmode="numeric" value="15" min="0" step="1">
+<label for="pr">Price per unit (Rs.)</label><input id="pr" type="number" inputmode="decimal" value="50" min="0">
+<label for="q">Quantity sold</label><input id="q" type="number" inputmode="numeric" value="10" min="0" step="1">
+<div id="po" class="out idle" aria-live="polite"></div>
+<p class="note">A sale larger than stock is rejected. Remaining stock below 10 triggers a restock warning.</p></section>
+</div>
+
+<h2 id="runs">Recorded sessions</h2>
+<p class="sub">Real terminal output, produced by running the programs on scripted input (<code>scripts/run_scenarios.py</code>).</p>
+<div role="tablist" aria-label="Sample sessions">
+<button role="tab" aria-selected="true" aria-controls="t0" id="b0">Scholarship, 3 students</button>
+<button role="tab" aria-selected="false" aria-controls="t1" id="b1">Scholarship, bad input</button>
+<button role="tab" aria-selected="false" aria-controls="t2" id="b2">Pharmacy, 3 medicines</button>
+<button role="tab" aria-selected="false" aria-controls="t3" id="b3">Pharmacy, bad input</button>
+</div>
+<pre id="t0" tabindex="0">{{SCHOLARSHIP}}</pre>
+<pre id="t1" tabindex="0" hidden>{{SCHOLARSHIP_INVALID}}</pre>
+<pre id="t2" tabindex="0" hidden>{{PHARMACY}}</pre>
+<pre id="t3" tabindex="0" hidden>{{PHARMACY_INVALID}}</pre>
+
+<h2 id="visuals">Diagrams and results</h2>
+<div class="gal">
+<figure class="wide"><img src="assets/chart_decision_map.png" alt="Scatter of marks against attendance showing the full, partial and not eligible zones" loading="lazy"><figcaption>Where each of the eight test students falls on the decision map.</figcaption></figure>
+<figure class="wide"><img src="assets/chart_criteria_matrix.png" alt="Table of pass and fail results per criterion for each scenario" loading="lazy"><figcaption>Criteria checks and outcome for every scholarship scenario.</figcaption></figure>
+<figure class="wide"><img src="assets/chart_pharmacy.png" alt="Bar charts of stock before and after and revenue per medicine" loading="lazy"><figcaption>Stock levels and revenue from the recorded pharmacy run.</figcaption></figure>
+<figure class="wide"><img src="assets/chart_tests.png" alt="Bar chart of passing tests by category" loading="lazy"><figcaption>Automated test results by category.</figcaption></figure>
+</div>
+<footer>Python 3.6+ · no third-party packages · generated by <code>scripts/build_preview.py</code> from recorded results.</footer>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+function show(el,cls,html){el.className="out "+cls;el.innerHTML=html}
+function sch(){
+  const m=parseFloat($("m").value),a=parseFloat($("a").value),i=parseFloat($("i").value),o=$("so");
+  if(![m,a,i].every(Number.isFinite)||m<0||m>100||a<0||a>100||i<0){return show(o,"idle","Enter marks and attendance between 0 and 100, and an income of 0 or more.")}
+  const r=[];
+  if(m<80)r.push("Marks ("+m.toFixed(1)+"%) are below the required 80%.");
+  if(a<85)r.push("Attendance ("+a.toFixed(1)+"%) is below the required 85%.");
+  if(i>50000)r.push("Monthly family income (Rs. "+Math.round(i).toLocaleString("en-US")+") exceeds Rs. 50,000.");
+  if(r.length)return show(o,"no","<strong>Not eligible</strong><ul>"+r.map(x=>"<li>"+x+"</li>").join("")+"</ul>");
+  show(o,m>=90?"ok":"wa","<strong>"+(m>=90?"Full Scholarship":"Partial Scholarship")+"</strong>All three criteria are met.");
+}
+function pha(){
+  const s=parseInt($("st").value,10),p=parseFloat($("pr").value),q=parseInt($("q").value,10),o=$("po");
+  if(!Number.isInteger(s)||!Number.isInteger(q)||s<0||q<0||!Number.isFinite(p)||p<=0){return show(o,"idle","Use whole numbers for stock and quantity, and a price above 0.")}
+  const low=r=>r<10?"<br>Low stock: only "+r+" left, so this medicine needs restocking.":"";
+  if(q>s)return show(o,"no","<strong>Sale rejected</strong>Only "+s+" unit(s) in stock; revenue is unchanged."+low(s));
+  const r=s-q;
+  show(o,r<10?"wa":"ok","<strong>Sale amount: Rs. "+(q*p).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})+"</strong>Remaining stock: "+r+" unit(s)."+low(r));
+}
+["m","a","i"].forEach(k=>$(k).addEventListener("input",sch));
+["st","pr","q"].forEach(k=>$(k).addEventListener("input",pha));
+sch();pha();
+const tabs=[0,1,2,3].map(n=>$("b"+n));
+tabs.forEach((b,n)=>b.addEventListener("click",()=>tabs.forEach((x,k)=>{x.setAttribute("aria-selected",k===n);$("t"+k).hidden=k!==n})));
+
+(()=>{
+const NS="http://www.w3.org/2000/svg",sleep=ms=>new Promise(r=>setTimeout(r,ms));
+/* ---- animated flowcharts: nodes [id,kind,x,y,w,h,text], edges [points,label,lx,ly] ---- */
+const SCH={W:420,H:520,N:[
+["start","t",210,18,76,24,"START"],["read","b",210,64,240,34,"Read + validate input"],
+["m","b",75,122,120,32,"marks < 80 ?|add reason"],["a","b",210,122,120,32,"attendance < 85 ?|add reason"],["i","b",345,122,120,32,"income > 50,000 ?|add reason"],
+["dec","d",210,196,150,50,"any reason?"],["no","b",70,272,120,34,"NOT ELIGIBLE|list reasons"],["d90","d",330,272,120,46,"marks >= 90 ?"],
+["full","b",270,350,110,34,"Full Scholarship"],["part","b",378,350,66,34,"Partial"],["rep","b",210,414,170,32,"Print report"],
+["again","d",210,470,150,48,"another student?"],["end","t",370,470,66,24,"END"]],
+E:[["210,30 210,47"],["210,81 210,92 75,92 75,106"],["210,81 210,106"],["210,81 210,92 345,92 345,106"],
+["75,138 75,160 210,160 210,171"],["210,138 210,171"],["345,138 345,160 210,160 210,171"],
+["135,196 70,196 70,255","Yes",100,190],["210,221 210,272 270,272","No",218,246],["330,295 330,320 270,320 270,333","Yes",300,316],["330,295 330,320 378,320 378,333","No",358,316],
+["70,289 70,414 125,414"],["270,367 270,414 295,414"],["378,367 378,414 295,414"],["210,430 210,446"],["285,470 337,470","n",311,463],["135,470 14,470 14,64 90,64","y",26,464]]};
+const PHA={W:420,H:600,N:[
+["start","t",210,16,76,24,"START"],["n","b",210,58,230,30,"Read N (N >= 1)"],["init","b",210,104,300,32,"revenue = 0, counters = 0, list = []"],
+["read","b",185,168,230,32,"Read name, stock, price, qty"],["q","d",185,226,150,46,"qty > stock ?"],
+["rej","b",85,292,140,40,"Reject sale|failed_count += 1"],["acc","b",290,292,170,50,"amount = qty x price|revenue += amount|sold_count += 1"],
+["low","d",185,356,170,48,"remaining < 10 ?"],["warn","b",85,420,140,42,"WARNING|restock_count += 1"],
+["rep","b",210,534,240,32,"Print daily report"],["end","t",210,580,76,24,"END"]],
+E:[["210,28 210,43"],["210,73 210,88"],["210,120 210,132 185,132 185,152"],["185,184 185,203"],
+["110,226 85,226 85,272","Yes",96,220],["260,226 290,226 290,267","No",276,220],
+["85,312 85,332 185,332"],["290,317 290,332 185,332"],
+["100,356 85,356 85,399","Yes",96,350],["270,356 392,356","No",330,349],["155,420 392,420 392,356"],["392,356 392,168 300,168","next medicine",318,162],
+["210,500 210,518"],["210,550 210,568"]],L:[18,128,384,372]};
+function flow(el,S,id){
+ let s=`<svg viewBox="0 0 ${S.W} ${S.H}" role="img"><defs><marker id="ar${id}" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0L8,4L0,8z" fill="currentColor"/></marker></defs>`;
+ if(S.L)s+=`<rect class="loop" x="${S.L[0]}" y="${S.L[1]}" width="${S.L[2]}" height="${S.L[3]}" rx="10"/><text class="ll" x="26" y="143">for i in range(1, N + 1)</text>`;
+ S.E.forEach(e=>{s+=`<polyline class="edge" points="${e[0]}" marker-end="url(#ar${id})"/>`;if(e[1])s+=`<text class="elab" x="${e[2]}" y="${e[3]}">${e[1]}</text>`});
+ S.N.forEach(([k,ty,x,y,w,h,tx])=>{
+  const sh=ty==="d"?`<polygon points="${x},${y-h/2} ${x+w/2},${y} ${x},${y+h/2} ${x-w/2},${y}"/>`:`<rect x="${x-w/2}" y="${y-h/2}" width="${w}" height="${h}" rx="${ty==="t"?h/2:7}"/>`;
+  const ls=tx.split("|"),y0=y-(ls.length-1)*6+4;
+  s+=`<g class="nd ${ty}" id="${id}-${k}">${sh}${ls.map((l,j)=>`<text x="${x}" y="${y0+j*12}">${l}</text>`).join("")}</g>`});
+ el.innerHTML=s+"</svg>";
+}
+/* ---- the programs, ported line-for-line from the Python files (generators = input() calls) ---- */
+const NONFIN=/^[+-]?(nan|inf(inity)?)$/i, INT=/^[+-]?\d+$/;
+function* num(P,pr,lo,hi,whole){for(;;){const t=(yield pr).trim();
+ if(whole?!INT.test(t):(t===""||(isNaN(Number(t))&&!NONFIN.test(t)))){P(whole?"  Invalid input. Please enter a whole number.":"  Invalid input. Please enter a number.");continue}
+ if(NONFIN.test(t)){P("  Invalid input. Please enter a real number.");continue}
+ const v=Number(t);if(v<lo||(hi!==undefined&&v>hi)){P(hi!==undefined?`  Value must be between ${lo} and ${hi}.`:`  Value must be at least ${lo}.`);continue}return v}}
+const rs=v=>Number.isInteger(v)?v.toLocaleString("en-US"):v.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+const title=s=>s.toLowerCase().replace(/(^|[^\p{L}])(\p{L})/gu,(m,a,b)=>a+b.toUpperCase());
+function* scholarship(P,hit){
+ P("=== Student Scholarship Eligibility System ===\n");hit(["start"]);
+ for(;;){hit(["read"]);let name;
+  for(;;){const t=(yield "Enter student name: ").trim();if(t&&/^[\p{L} '.\-]+$/u.test(t)&&/\p{L}/u.test(t)){name=title(t);break}P("  Invalid name. Use letters, spaces, hyphens or apostrophes only.")}
+  const m=yield*num(P,"Enter academic marks (%): ",0,100),a=yield*num(P,"Enter attendance percentage (%): ",0,100),i=yield*num(P,"Enter monthly family income (Rs.): ",0);
+  hit(["m","a","i"]);const r=[];
+  if(m<80)r.push(`Marks (${m.toFixed(1)}%) are below the required 80%.`);
+  if(a<85)r.push(`Attendance (${a.toFixed(1)}%) is below the required 85%.`);
+  if(i>50000)r.push(`Monthly family income (Rs. ${rs(i)}) exceeds Rs. 50,000.`);
+  hit(["dec"]);let aw="None";if(r.length)hit(["no"]);else{hit(["d90"]);aw=m>=90?"Full Scholarship":"Partial Scholarship";hit([m>=90?"full":"part"])}
+  hit(["rep"]);const L="=".repeat(52);
+  P(`\n${L}\n        SCHOLARSHIP EVALUATION REPORT\n${L}\nStudent Name          : ${name}\nAcademic Marks        : ${m.toFixed(1)}%   (min 80%)\nAttendance            : ${a.toFixed(1)}%   (min 85%)\nMonthly Family Income : Rs. ${rs(i)}   (max Rs. 50,000)\n${"-".repeat(52)}`);
+  P(r.length?"Status                : NOT ELIGIBLE\nReason(s):\n"+r.map(x=>"  - "+x).join("\n"):"Status                : ELIGIBLE\nScholarship Awarded   : "+aw);P(L);
+  hit(["again"]);if(((yield "\nEvaluate another student? (y/n): ").trim().toLowerCase())!=="y"){hit(["end"]);P("Goodbye!");return}P("")}}
+function* pharmacy(P,hit){
+ P("=== Smart Pharmacy Inventory & Sales Management System ===\n");hit(["start","n"]);
+ const N=yield*num(P,"How many different medicines to process? ",1,undefined,true);
+ let rev=0,rc=0,sc=0,fc=0;const rl=[];hit(["init"]);
+ for(let k=1;k<=N;k++){P(`\n--- Medicine ${k} of ${N} ---`);hit(["read"]);let name;
+  for(;;){const t=(yield "Medicine name: ").trim();if(t){name=title(t);break}P("  Name cannot be empty.")}
+  const st=yield*num(P,"Available stock (units): ",0,undefined,true);
+  let pr;for(;;){const t=(yield "Price per unit (Rs.): ").trim();if(t===""||(isNaN(Number(t))&&!NONFIN.test(t))){P("  Invalid input. Please enter a number.");continue}
+   if(NONFIN.test(t)){P("  Invalid input. Please enter a real number.");continue}pr=Number(t);if(pr<=0){P("  Price must be greater than 0.");continue}break}
+  const q=yield*num(P,"Quantity sold: ",0,undefined,true);hit(["q"]);let rem;
+  if(q>st){hit(["rej"]);P(`  [!] Sale rejected: only ${st} unit(s) of ${name} in stock.`);fc++;rem=st}
+  else{hit(["acc"]);const am=q*pr;rev+=am;sc++;rem=st-q;P(`  Sale amount     : Rs. ${am.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})}\n  Remaining stock : ${rem} unit(s)`)}
+  hit(["low"]);if(rem<10){hit(["warn"]);P(`  [WARNING] Low stock for ${name}! Only ${rem} left.`);rc++;rl.push(name)}}
+ hit(["rep"]);const L="=".repeat(50);
+ P(`\n${L}\n        DAILY PHARMACY REPORT\n${L}\nTotal medicines processed    : ${N}\nSuccessful sales             : ${sc}\nRejected sales (low stock)   : ${fc}\nTotal revenue                : Rs. ${rev.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})}\nMedicines requiring restock  : ${rc}`+(rl.length?"\nRestock list                 : "+rl.join(", "):"")+`\n${L}`);hit(["end"])}
+/* ---- terminal widget ---- */
+function Term(id,prog,S,demo){
+ const root=$(id),out=root.querySelector("pre"),inp=root.querySelector("input"),pr=root.querySelector(".tr span");let gen,run=0,cur="";
+ flow(root.querySelector(".fl"),S,id);
+ const P=t=>{out.textContent+=t+"\n";out.scrollTop=out.scrollHeight};
+ const hit=ids=>{root.querySelectorAll(".nd.on").forEach(n=>{n.classList.remove("on");n.classList.add("seen")});ids.forEach(k=>{const n=$(id+"-"+k);if(n){n.classList.remove("seen");n.classList.add("on")}})};
+ function step(a){const r=gen.next(a);if(r.done){cur="";pr.textContent="";inp.disabled=true;inp.value="";root.querySelectorAll(".nd.on").forEach(n=>{n.classList.remove("on");n.classList.add("seen")});P("\n[finished. Press Restart or Auto-play to run again]");return}
+  cur=r.value;pr.textContent=cur.replace(/^\n/,"");if(cur[0]==="\n")P("");inp.disabled=false}
+ function start(){run++;out.textContent="";root.querySelectorAll(".nd").forEach(n=>n.classList.remove("on","seen"));gen=prog(P,hit);step()}
+ function submit(){const v=inp.value;inp.value="";P(cur.replace(/^\n/,"")+v);step(v)}
+ inp.addEventListener("keydown",e=>{if(e.key==="Enter"&&!inp.disabled)submit()});
+ root.querySelector('[data-a=re]').onclick=()=>{start();inp.focus({preventScroll:true})};
+ root.querySelector('[data-a=auto]').onclick=async()=>{start();const my=run;
+  for(const a of demo){await sleep(550);if(my!==run)return;for(const c of a){inp.value+=c;await sleep(40);if(my!==run)return}await sleep(260);if(my!==run)return;submit()}};
+ start();
+}
+Term("rs",scholarship,SCH,["ali123","ali khan","abc","150","95","90","40000","y","bilal","70","80","60000","n"]);
+Term("rp",pharmacy,PHA,["0","3","panadol","100","5","20","amoxil","15","50","10","brufen","8","12","9"]);
+})();
+</script>
+</body>
+</html>

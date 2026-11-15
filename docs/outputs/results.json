@@ -1,0 +1,197 @@
+{
+  "scholarship": [
+    {
+      "label": "S1 Full scholarship",
+      "name": "Ali Khan",
+      "marks": 95,
+      "attendance": 90,
+      "income": 40000,
+      "award": "Full Scholarship",
+      "eligible": true,
+      "reasons": [],
+      "marks_ok": true,
+      "attendance_ok": true,
+      "income_ok": true
+    },
+    {
+      "label": "S2 Partial scholarship",
+      "name": "Sara Noor",
+      "marks": 85,
+      "attendance": 88,
+      "income": 50000,
+      "award": "Partial Scholarship",
+      "eligible": true,
+      "reasons": [],
+      "marks_ok": true,
+      "attendance_ok": true,
+      "income_ok": true
+    },
+    {
+      "label": "S3 All criteria fail",
+      "name": "Bilal",
+      "marks": 70,
+      "attendance": 80,
+      "income": 60000,
+      "award": "None",
+      "eligible": false,
+      "reasons": [
+        "Marks (70.0%) are below the required 80%.",
+        "Attendance (80.0%) is below the required 85%.",
+        "Monthly family income (Rs. 60,000) exceeds Rs. 50,000."
+      ],
+      "marks_ok": false,
+      "attendance_ok": false,
+      "income_ok": false
+    },
+    {
+      "label": "S4 Marks boundary (90)",
+      "name": "Hina",
+      "marks": 90,
+      "attendance": 85,
+      "income": 50000,
+      "award": "Full Scholarship",
+      "eligible": true,
+      "reasons": [],
+      "marks_ok": true,
+      "attendance_ok": true,
+      "income_ok": true
+    },
+    {
+      "label": "S5 Marks boundary (80)",
+      "name": "Usman",
+      "marks": 80,
+      "attendance": 85,
+      "income": 50000,
+      "award": "Partial Scholarship",
+      "eligible": true,
+      "reasons": [],
+      "marks_ok": true,
+      "attendance_ok": true,
+      "income_ok": true
+    },
+    {
+      "label": "S6 Attendance fails only",
+      "name": "Zara",
+      "marks": 92,
+      "attendance": 84,
+      "income": 30000,
+      "award": "None",
+      "eligible": false,
+      "reasons": [
+        "Attendance (84.0%) is below the required 85%."
+      ],
+      "marks_ok": true,
+      "attendance_ok": false,
+      "income_ok": true
+    },
+    {
+      "label": "S7 Income fails only",
+      "name": "Omar",
+      "marks": 88,
+      "attendance": 95,
+      "income": 50001,
+      "award": "None",
+      "eligible": false,
+      "reasons": [
+        "Monthly family income (Rs. 50,001) exceeds Rs. 50,000."
+      ],
+      "marks_ok": true,
+      "attendance_ok": true,
+      "income_ok": false
+    },
+    {
+      "label": "S8 Marks fails only",
+      "name": "Ayesha",
+      "marks": 79,
+      "attendance": 90,
+      "income": 20000,
+      "award": "None",
+      "eligible": false,
+      "reasons": [
+        "Marks (79.0%) are below the required 80%."
+      ],
+      "marks_ok": false,
+      "attendance_ok": true,
+      "income_ok": true
+    }
+  ],
+  "pharmacy": {
+    "medicines": [
+      {
+        "name": "Panadol",
+        "stock": 100,
+        "price": 5,
+        "quantity": 20,
+        "accepted": true,
+        "amount": 100,
+        "remaining": 80,
+        "low_stock": false
+      },
+      {
+        "name": "Amoxil",
+        "stock": 15,
+        "price": 50,
+        "quantity": 10,
+        "accepted": true,
+        "amount": 500,
+        "remaining": 5,
+        "low_stock": true
+      },
+      {
+        "name": "Brufen",
+        "stock": 8,
+        "price": 12,
+        "quantity": 9,
+        "accepted": false,
+        "amount": 0.0,
+        "remaining": 8,
+        "low_stock": true
+      }
+    ],
+    "total_revenue": 600.0,
+    "sold": 2,
+    "failed": 1,
+    "restock": [
+      "Amoxil",
+      "Brufen"
+    ],
+    "low_stock_limit": 10
+  },
+  "tests": {
+    "by_class": {
+      "test_pharmacy.TestEndToEnd": {
+        "total": 5,
+        "passed": 5
+      },
+      "test_pharmacy.TestProcessSale": {
+        "total": 7,
+        "passed": 7
+      },
+      "test_pharmacy.TestValidation": {
+        "total": 4,
+        "passed": 4
+      },
+      "test_scholarship.TestEndToEnd": {
+        "total": 4,
+        "passed": 4
+      },
+      "test_scholarship.TestEvaluate": {
+        "total": 12,
+        "passed": 12
+      },
+      "test_scholarship.TestValidation": {
+        "total": 5,
+        "passed": 5
+      }
+    },
+    "total": 37,
+    "failed": 0
+  },
+  "constants": {
+    "MIN_MARKS": 80,
+    "FULL": 90,
+    "MIN_ATT": 85,
+    "MAX_INCOME": 50000,
+    "LOW_STOCK": 10
+  }
+}

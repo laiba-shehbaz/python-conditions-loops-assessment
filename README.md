@@ -31,7 +31,6 @@
 12. [How to run](#how-to-run)
 13. [Regenerating the results and images](#regenerating-the-results-and-images)
 14. [Publish the preview](#publish-the-preview)
-15. [References](#references)
 
 ---
 
